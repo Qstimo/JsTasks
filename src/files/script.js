@@ -741,25 +741,119 @@
 
 // console.log(deleteSumbl(str))
 
-//Дан некоторый массив, например, вот такой:
+// //Дан некоторый массив, например, вот такой:
 
-// [1, 2, 3, 4, 5, 6]
-// Поделите сумму элементов, стоящих на четных позициях, на сумму элементов, стоящих на нечетных позициях.
-const sumOdd = arr=>{
-    let result = 0;
-    let odd = 0;
-    let NoOdd = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if(i % 2 === 0){
-            odd += arr[i];
-        }else{
-            NoOdd += arr[i];
-        }
+// // [1, 2, 3, 4, 5, 6]
+// // Поделите сумму элементов, стоящих на четных позициях, на сумму элементов, стоящих на нечетных позициях.
+// const sumOdd = arr=>{
+//     let result = 0;
+//     let odd = 0;
+//     let NoOdd = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         if(i % 2 === 0){
+//             odd += arr[i];
+//         }else{
+//             NoOdd += arr[i];
+//         }
         
+//     }
+//     console.log(odd,NoOdd);
+//     result = odd/NoOdd;
+//     console.log(result);
+// }
+// let arr = [1, 2, 3, 4, 5, 6];
+// sumOdd(arr);
+
+//функция генерации уникальных чисел в указанном диапозоне 
+
+// function getRandomPositiveInteger (min, max) {
+//     const lower = Math.ceil(Math.min(Math.abs(min), Math.abs(max)));
+//     const upper = Math.floor(Math.max(Math.abs(min), Math.abs(max)));
+//     const result = Math.random() * (upper - lower + 1) + lower;
+  
+//     return Math.floor(result);
+//   }
+  
+//   function createRandomIdFromRangeGenerator (min, max) {
+//     const previousValues = [];
+  
+//     return function () {
+//       let currentValue = getRandomPositiveInteger(min, max);
+//       if (previousValues.length >= (max - min + 1)) {
+//         console.error('Перебраны все числа из диапазона от ' + min + ' до ' + max);
+//         return null;
+//       }
+//       while (previousValues.includes(currentValue)) {
+//         currentValue = getRandomPositiveInteger(min, max);
+//       }
+//       previousValues.push(currentValue);
+//       return currentValue;
+//     };
+//   }
+  
+//   const generatePhotoId = createRandomIdFromRangeGenerator(1, 3);
+
+//Дана некоторая строка с буквами и цифрами. Получите массив позиций всех цифр из этой строки.
+//  const arrNum = str =>{
+//    let  arr = str.split('').filter(elem=>
+//         Number.isInteger(+elem)
+      
+//     )
+//     console.log(arr);
+//  }
+
+//  arrNum('adas11da4d5');
+
+//Дан массив с некоторыми числами, например, вот такой:
+
+// [123, 456, 789]
+// Напишите код, который перевернет числа в этом массиве по следующему принципу:
+
+// [321, 654, 987]
+
+// const arr = [123, 456, 789];
+
+// const reversedArr = arr.map(num => {
+//   const reversedNum = parseInt(num.toString().split('').reverse().join(''));
+//   return reversedNum;
+// });
+
+// console.log(reversedArr); // [321, 654, 987]
+
+// Дана некоторая строка с числом:
+
+// '1234567'
+// Отделите тройки цифр пробелами, начиная с конца числа. В нашем случае должно получится следующее:
+
+// '1 234 567'
+
+
+// spaceFunc('1234567')
+
+// const str = '1234567';
+
+// const formattedStr = str.replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+
+// console.log(formattedStr); // '1 234 567'
+
+// Дана некоторая строка:
+
+// 'AbCdE'
+// Смените регистр букв этой строки на противоположный. В нашем случае должно получится следующее:
+
+// 'aBcDe'
+
+const reverseReg = str =>{
+    let newStr = '';
+    for (let i = 0; i < str.length; i++) {
+        const element = str[i];
+        if (element.toUpperCase() === element){
+            newStr+= element.toLowerCase();
+        } else if(element.toLowerCase() === element){
+            newStr += element.toUpperCase();
+        }
+
     }
-    console.log(odd,NoOdd);
-    result = odd/NoOdd;
-    console.log(result);
+    console.log(newStr)
 }
-let arr = [1, 2, 3, 4, 5, 6];
-sumOdd(arr);
+reverseReg('AbCdE')
