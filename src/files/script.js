@@ -843,17 +843,164 @@
 
 // 'aBcDe'
 
-const reverseReg = str =>{
-    let newStr = '';
-    for (let i = 0; i < str.length; i++) {
-        const element = str[i];
-        if (element.toUpperCase() === element){
-            newStr+= element.toLowerCase();
-        } else if(element.toLowerCase() === element){
-            newStr += element.toUpperCase();
-        }
+// const reverseReg = str =>{
+//     let newStr = '';
+//     for (let i = 0; i < str.length; i++) {
+//         const element = str[i];
+//         if (element.toUpperCase() === element){
+//             newStr+= element.toLowerCase();
+//         } else if(element.toLowerCase() === element){
+//             newStr += element.toUpperCase();
+//         }
 
-    }
-    console.log(newStr)
-}
-reverseReg('AbCdE')
+//     }
+//     console.log(newStr)
+// }
+// reverseReg('AbCdE')
+
+// Дан некоторый массив с числами, например, вот такой:
+
+// [1, 2, 3, 4, 5, 6]
+// Слейте пары элементов вместе:
+
+// [12, 34, 56]
+// const joinArr = arr =>{
+
+// }
+// let arr = [12, 34, 56];
+
+// const formattedStr = arr.join('').replace(/\B(?=(\d{2})+(?!\d))/g, ' ').split(' ');
+
+// console.log(formattedStr); 
+
+// Дана некоторая строка со словами:
+
+// 'aaa bbb ccc eee fff'
+// Сделайте заглавным первый символ каждого второго слова в этой строке. В нашем случае должно получится следующее:
+
+// 'aaa Bbb ccc Eee fff'
+//каждая вторая заглавная буква
+// const arrUpper = arr =>{
+//     return arr.split(' ').map( word => {
+//         return word.slice(0,1) + word[1].toUpperCase() + word.slice(2);
+//     }).join(' ');
+// }
+// console.log(arrUpper('aaa bbb ccc eee fff'));
+//  const arrUpperWord = str =>{
+//     return str.split(' ').map((elem, i) =>{
+//         if (i % 2 !== 0){ return elem[0].toUpperCase() + elem.slice(1)}
+//         else{ return elem};
+        
+//     }).join(' ');
+//  }
+//  console.log(arrUpperWord('aaa bbb ccc eee fff'));
+
+// Дана некоторая строка:
+
+// 'a bc def ghij'
+// Переведите в верхний регистр все подстроки, в которых количество букв меньше или равно трем. В нашем случае должно получится следующее:
+
+// 'A BC DEF ghij'
+
+// const upperFunc =str=>{
+//    return str.split(' ').map((elem, i)=>{
+//         if(elem.length <= 3){
+//             return elem.toUpperCase();
+//         } else{ return elem};
+//     }).join(' ');
+// }
+// console.log(upperFunc('a bc def ghij'))
+
+// Дан символ. Узнайте, в каком регистре этот символ - в верхнем или нижнем.
+
+// const registrFunc = str =>{
+//     let newStr = str.split('');
+//     for (let i = 0; i < newStr.length; i++) {
+//         const element = newStr[i];
+//         if (element == element.toUpperCase()){
+//             console.log(element + ' имеет верхний регистр')
+//         } else{
+//             console.log(element + ' имеет нижний регистр')
+//         }
+        
+//     }
+// };
+// registrFunc('aAa');
+
+// Дано некоторое число, например, такое:
+
+// 123789
+// Удалите из этого числа все нечетные цифры. В нашем случае получится такой результат:
+
+// 28
+
+// const numOdd = num =>{
+//     let str = num.toString();
+//     return +str.split('').map(elem=>{
+//         if (elem % 2 === 0){
+//             return elem;
+//         }
+//     }).join('');
+// }
+// console.log(numOdd(123789));
+
+//Дана строка с буквами. Проверьте, что в этой строке не более двух заглавных букв.
+
+// const upperCurrent = str =>{
+//     let currentValue = 0;
+//     for (let i = 0; i < str.length; i++) {
+//         const element = str[i];
+//         if (element == element.toUpperCase()){
+//             currentValue++
+//         };
+//         if(currentValue >= 2){
+//             console.log("в тексте больше 2х загалавных букв");
+//             break
+//         }
+//     }
+
+// }
+// upperCurrent('fgsdnAjfAkk')
+
+// '1 22 333 4444 22 5555 1'
+// Удалите из этой строки все подстроки, в которых количество символов больше трех. В нашем случае должно получится следующее:
+
+// '1 22 333 22 1'
+
+// const smalStr = str =>{
+//     return str.split(' ').map(elem =>{
+//         if (elem.length <=3){
+//             return elem;
+//         }
+//     }).join(' ');
+// }
+// console.log(smalStr('1 22 333 4444 22 5555 1'));
+
+// Даны два массива:
+
+// let arr1 = [1, 2, 3];
+// let arr2 = ['a', 'b', 'c'];
+// Слейте эти массивы в новый массив следующим образом:
+
+// [1, 2, 'a', 'b', 'c', 3]
+
+// let arr1 = [1, 2, 3];
+// let arr2 = ['a', 'b', 'c'];
+// let arrAll = [].concat(arr1[0],arr2,arr1.slice(1))
+// console.log(arrAll)
+
+//123456
+// Найдите сумму пар цифр этого числа. В нашем случае имеется ввиду следующее:
+
+// 12 + 34 + 56
+// num = 123456;
+// const formattedStr = num.toString().replace(/\B(?=(\d{2})+(?!\d))/g, ' ').split(' ');
+// const sum = formattedStr.reduce((a,b)=>{
+//     return +a + +b;
+// }, 0)
+// console.log(sum);
+
+//
+// Выведите в консоль элементы этого массива в обратном порядке.
+let arr = [1, 2, 3, 4, 5];
+console.log(arr.reverse());
