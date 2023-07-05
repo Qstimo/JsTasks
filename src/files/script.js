@@ -706,7 +706,7 @@
 // const deleteSumbl = str => {
 //    return str.split('').filter((elem, i)=>{
 //     for (let i = 0; i < str.length; i+=2) {
-        
+
 //     }
 //    }
 //    ).join('');
@@ -734,7 +734,7 @@
 //         if ((i+1) % 3 !== 0){
 //             result+=str[i];
 //         }
-        
+
 //     }
 //     return result;
 //  }
@@ -755,7 +755,7 @@
 //         }else{
 //             NoOdd += arr[i];
 //         }
-        
+
 //     }
 //     console.log(odd,NoOdd);
 //     result = odd/NoOdd;
@@ -770,13 +770,13 @@
 //     const lower = Math.ceil(Math.min(Math.abs(min), Math.abs(max)));
 //     const upper = Math.floor(Math.max(Math.abs(min), Math.abs(max)));
 //     const result = Math.random() * (upper - lower + 1) + lower;
-  
+
 //     return Math.floor(result);
 //   }
-  
+
 //   function createRandomIdFromRangeGenerator (min, max) {
 //     const previousValues = [];
-  
+
 //     return function () {
 //       let currentValue = getRandomPositiveInteger(min, max);
 //       if (previousValues.length >= (max - min + 1)) {
@@ -790,14 +790,14 @@
 //       return currentValue;
 //     };
 //   }
-  
+
 //   const generatePhotoId = createRandomIdFromRangeGenerator(1, 3);
 
 //Дана некоторая строка с буквами и цифрами. Получите массив позиций всех цифр из этой строки.
 //  const arrNum = str =>{
 //    let  arr = str.split('').filter(elem=>
 //         Number.isInteger(+elem)
-      
+
 //     )
 //     console.log(arr);
 //  }
@@ -890,7 +890,7 @@
 //     return str.split(' ').map((elem, i) =>{
 //         if (i % 2 !== 0){ return elem[0].toUpperCase() + elem.slice(1)}
 //         else{ return elem};
-        
+
 //     }).join(' ');
 //  }
 //  console.log(arrUpperWord('aaa bbb ccc eee fff'));
@@ -922,7 +922,7 @@
 //         } else{
 //             console.log(element + ' имеет нижний регистр')
 //         }
-        
+
 //     }
 // };
 // registrFunc('aAa');
@@ -1002,5 +1002,109 @@
 
 //
 // Выведите в консоль элементы этого массива в обратном порядке.
-let arr = [1, 2, 3, 4, 5];
-console.log(arr.reverse());
+// let arr = [1, 2, 3, 4, 5];
+// console.log(arr.reverse());
+
+// Дана строка с буквами и цифрами. Проверьте, что в этой строке не более трех букв.
+
+// const strLength = str =>{
+//     str.length > 3 ? console.log("больше") : console.log('меньше');
+// };
+// strLength('aa');
+
+//Дано число. Получите первую четную цифру с конца этого числа.
+
+// const oddNum = num=>{
+//     return +num.toString().split('').find( elem=> elem%2 === 0)
+// };
+// console.log(oddNum(51111114));
+// oddNum(568);
+
+//Дана некоторая строка:
+
+// 'abcde abcde abcde'
+// Замените в ней первый символ каждого слова на '!':
+
+// '!bcde !bcde !bcde'
+
+// const uyFunc = str=>{
+//     return str.split(' ').map(elem=>{
+//       return  (elem[0] = '!')+ elem.slice(1);
+//     }).join(' ');
+// }
+//  console.log(uyFunc('abcde abcde abcde'));
+
+//Дан массив с числами:
+
+// [1, 2, 3, 3, 4, 5]
+// Проверьте, что в этом массиве есть два одинаковых элемента подряд.
+
+// const arrDuble = arr =>{
+//     for (let i = 0 ; i < arr.length; i++) {
+//         const element = arr[i];
+//         if (element === arr[i-1]){
+//             console.log(element,arr[i-1])
+//         }
+
+//     }
+// }
+// arrDuble([1, 2, 3, 3, 4, 5, 5]);
+
+// Дано некоторое число. Проверьте, что цифры этого числа расположены по возрастанию.
+
+// const numRelev = num =>{
+//     let str = num.toString().split('');
+//     for (let i = 0; i < str.length; i++) {
+//         const element = str[i];
+//         if(element < str[i-1]){
+//             console.log(false);
+//             break
+//         }else{console.log(true)}
+
+//     }
+// }
+// numRelev(1152345)
+
+// Дан массив:
+
+// [1, '', 2, 3, '', 5]
+// Удалите из массива все пустые строки.
+
+// const deletArr = arr=>{
+//    return arr.filter(Boolean);
+// }
+// console.log(deletArr([1, '', 2, 3, '', 5]));
+
+//Дан массив:
+
+// let arr = [
+// 	[2, 1, 4, 3, 5],
+// 	[3, 5, 2, 4, 1],
+// 	[4, 3, 1, 5, 2],
+// ]
+// // Отсортируйте элементы в каждом подмассиве.
+//   newArr = arr.map(i=> {
+//     return i.sort((a,b)=>{return a-b})
+//   })  ;
+//   console.log(newArr);
+
+// Даны два массива:
+
+let arr1 = [1, 2, 3];
+let arr2 = [3, 2, 3, 4, 5];
+// Удалите из большего массива лишние элементы с конца так, чтобы длины массивов стали одинаковыми.
+const arrConstructor = (arr1, arr2) => {
+    let maxArr = null;
+    let minArr = null;
+    if (arr1.length > arr2.length) {
+        maxArr = arr1;
+        minArr = arr2;
+    } else {
+        maxArr = arr2;
+        minArr = arr1;
+    };
+    maxArr = maxArr.splice(0,minArr.length);
+    console.log(maxArr,minArr)
+    
+};
+arrConstructor(arr1,arr2)
