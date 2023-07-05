@@ -1,3 +1,18 @@
+
+let generateArray = num=>{
+    let arr = [];
+     for (let index = 0; index <= num; index++) {
+         arr.push(index);
+         
+     }
+     return arr;
+ };
+ 
+ 
+
+ 
+
+
 // const numerSearch = (number) => {
 //     if (number < 0){
 //         console.log("Число " + number + "отрицательное");
@@ -1090,21 +1105,99 @@
 
 // Даны два массива:
 
-let arr1 = [1, 2, 3];
-let arr2 = [3, 2, 3, 4, 5];
-// Удалите из большего массива лишние элементы с конца так, чтобы длины массивов стали одинаковыми.
-const arrConstructor = (arr1, arr2) => {
-    let maxArr = null;
-    let minArr = null;
-    if (arr1.length > arr2.length) {
-        maxArr = arr1;
-        minArr = arr2;
-    } else {
-        maxArr = arr2;
-        minArr = arr1;
-    };
-    maxArr = maxArr.splice(0,minArr.length);
-    console.log(maxArr,minArr)
-    
-};
-arrConstructor(arr1,arr2)
+// let arr1 = [1, 2, 3];
+// let arr2 = [3, 2, 3, 4, 5];
+// // Удалите из большего массива лишние элементы с конца так, чтобы длины массивов стали одинаковыми.
+// const arrConstructor = (arr1, arr2) => {
+//     let maxArr = null;
+//     let minArr = null;
+//     if (arr1.length > arr2.length) {
+//         maxArr = arr1;
+//         minArr = arr2;
+//     } else {
+//         maxArr = arr2;
+//         minArr = arr1;
+//     };
+//     maxArr = maxArr.splice(0,minArr.length);
+//     console.log(maxArr,minArr)
+
+// };
+// arrConstructor(arr1,arr2)
+
+//Выведите в консоль все числа в промежутке от 10 до 1000, у которых предпоследняя цифра четная.
+
+// let currentValueOdd = num => {
+//     for (let i = 10; i < num; i++) {
+//         let strNum = i.toString();
+//         // console.log(strNum.at(-2));
+//         let arrNum = [];
+//         if (strNum.at(-2) % 2 == 0) {
+//             console.log(i);
+//         }
+
+//     }
+
+// };
+// currentValueOdd(1000)
+
+//Дан массив. Удалите из него каждый пятый элемент.
+
+
+// let deletFive = arr =>{
+//     let newArr = [];
+//     for (let i = 4; i < arr.length; i+=4) {
+//         const element = arr[i];
+//         arr.splice(i,1);
+       
+//     }
+//     return arr;
+// };
+// let genArr = generateArray(30);
+// console.log(deletFive(genArr));
+
+//Дана некоторая переменная с числом:
+
+// let num = 5;
+// // Сделайте строку, содержащую столько нулей, сколько указано в переменной. В нашем случае получится такая строка:
+
+// // '00000'
+// let funcNull = num =>{
+//     newstr= '';
+//     for (let i = 1; i <= num; i++) {
+//        newstr+= '0'
+        
+//     }
+//     return newstr;
+// };
+// console.log(funcNull(3))
+
+// Дана некоторая строка со словами:
+
+// 'aaa bbb ccc eee fff'
+// Удалите из этой строки каждое второе слово. В нашем случае должно получится следующее:
+
+// 'aaa ccc fff'
+
+// let str = 'aaa bbb ccc eee fff';
+// newStr = str.split(' ');
+// for (let i = 1; i < newStr.length; i+=1) {
+//     newStr.splice(i,1)
+// }
+// console.log(newStr.join(' '))
+
+// Дан массив:
+
+// let arrNum = [
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ]
+// Найдите сумму элементов этого массива.
+
+// let sumArr = arr =>{
+//    return  arr.flat().reduce((a, b) => a + b, 0);
+
+// }
+// const add = arr => arr.reduce((a, b) => a + b, 0);
+
+// console.log(sumArr(arrNum))
