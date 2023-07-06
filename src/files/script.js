@@ -1,16 +1,16 @@
 
-let generateArray = num=>{
+let generateArray = num => {
     let arr = [];
-     for (let index = 0; index <= num; index++) {
-         arr.push(index);
-         
-     }
-     return arr;
- };
- 
- 
+    for (let index = 0; index <= num; index++) {
+        arr.push(index);
 
- 
+    }
+    return arr;
+};
+
+
+
+
 
 
 // const numerSearch = (number) => {
@@ -1148,7 +1148,7 @@ let generateArray = num=>{
 //     for (let i = 4; i < arr.length; i+=4) {
 //         const element = arr[i];
 //         arr.splice(i,1);
-       
+
 //     }
 //     return arr;
 // };
@@ -1165,7 +1165,7 @@ let generateArray = num=>{
 //     newstr= '';
 //     for (let i = 1; i <= num; i++) {
 //        newstr+= '0'
-        
+
 //     }
 //     return newstr;
 // };
@@ -1201,3 +1201,137 @@ let generateArray = num=>{
 // const add = arr => arr.reduce((a, b) => a + b, 0);
 
 // console.log(sumArr(arrNum))
+
+//Дан массив со словами. Удалите из него слова, состоящие более чем из трех символов.
+
+// let arrStr = ['aeee', 'aaaa', 'aaa', 'aaa', '1234', 'aa',];
+// const arrFunc = arr => {
+//     let newArr = [];
+//     arr.map((elem, i) => {
+//         if (elem.length <= 3) {
+//             newArr.push(elem);
+//         }
+//     })
+//     return newArr;
+// }
+
+// console.log(arrFunc(arrStr))
+
+// Дано некоторое число:
+
+// let number =  13527;
+// // Проверьте, что все цифры этого числа являются нечетными.
+// let numNoOdd = num=>{
+//     return num.toString().split('').map(elem=>{
+//         if(+elem % 2 ===0){
+//             console.log('найден четный элемент: ' + elem);
+            
+//         }else{
+//             console.log('Элемент '+ elem + ' является нечётным')
+//         }
+//     }).join('');
+// }
+// numNoOdd(number)
+
+// Дано некоторое слово:
+
+// // 'abcba'
+// // Проверьте, что это слово читается одинаково с любой стороны.
+// const abba =str =>{
+//     let newstr = str;
+//     let strRev = newstr.split('').reverse().join('')
+
+//     if(newstr == strRev){
+//         console.log(true)
+//     }else{
+//         console.log(false)
+//     }
+// }
+// abba('abcba')
+
+//Дан массив:
+
+// let arrNum= [
+// 	[
+// 		[11, 12, 13],
+// 		[14, 15, 16],
+// 		[17, 17, 19],
+// 	],
+// 	[
+// 		[21, 22, 23],
+// 		[24, 25, 26],
+// 		[27, 27, 29],
+// 	],
+// 	[
+// 		[31, 32, 33],
+// 		[34, 35, 36],
+// 		[37, 37, 39],
+// 	],
+// ]
+// // Найдите сумму элементов этого массива.
+// let sumArr = arr =>{
+//        return  arr.flat(2).reduce((a, b) => a + b, 0);
+    
+//     }
+//     const add = arr => arr.reduce((a, b) => a + b, 0);
+    
+//     console.log(sumArr(arrNum))
+
+//Выведите в консоль все числа в промежутке от 10 до 1000, у которых первая цифра четная.
+// let currentValueOdd = num => {
+//         for (let i = 10; i < num; i++) {
+//             let strNum = i.toString();
+            
+//             let arrNum = [];
+//             if (strNum[0] % 2 == 0) {
+//                 console.log(i);
+//             }
+    
+//         }
+    
+//     };
+//     currentValueOdd(1000)
+
+// Дан некоторый массив, например, вот такой:
+
+// let arrNum = [1, 2, 3, 4, 5, 6];
+// // Поменяйте местами пары элементов этого массива:
+
+// // [2, 1, 4, 3, 6, 5]
+// let arr = [1, 2, 3, 4, 5, 6];
+
+// for (let i = 0; i < arr.length - 1; i += 2) {
+//     [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]];
+// }
+// console.log(arr);
+
+// Дан следующий объект:
+
+let obj = {
+	1: {
+		1: 11,
+		2: 12,
+		3: 13,
+	},
+	2: {
+		1: 21,
+		2: 22,
+		3: 23,
+	},
+	3: {
+		1: 24,
+		2: 25,
+		3: 26,
+	},
+}
+// Найдите сумму элементов этого объекта.
+let sum = 0;
+
+
+Object.values(obj).forEach((innerObj) => {
+
+    sum +=  Object.values(innerObj).reduce((a, b) => a + b, 0)
+});
+;
+
+console.log(sum);
