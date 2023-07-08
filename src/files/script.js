@@ -1225,7 +1225,7 @@ let generateArray = num => {
 //     return num.toString().split('').map(elem=>{
 //         if(+elem % 2 ===0){
 //             console.log('найден четный элемент: ' + elem);
-            
+
 //         }else{
 //             console.log('Элемент '+ elem + ' является нечётным')
 //         }
@@ -1271,24 +1271,24 @@ let generateArray = num => {
 // // Найдите сумму элементов этого массива.
 // let sumArr = arr =>{
 //        return  arr.flat(2).reduce((a, b) => a + b, 0);
-    
+
 //     }
 //     const add = arr => arr.reduce((a, b) => a + b, 0);
-    
+
 //     console.log(sumArr(arrNum))
 
 //Выведите в консоль все числа в промежутке от 10 до 1000, у которых первая цифра четная.
 // let currentValueOdd = num => {
 //         for (let i = 10; i < num; i++) {
 //             let strNum = i.toString();
-            
+
 //             let arrNum = [];
 //             if (strNum[0] % 2 == 0) {
 //                 console.log(i);
 //             }
-    
+
 //         }
-    
+
 //     };
 //     currentValueOdd(1000)
 
@@ -1307,31 +1307,173 @@ let generateArray = num => {
 
 // Дан следующий объект:
 
+// let obj = {
+// 	1: {
+// 		1: 11,
+// 		2: 12,
+// 		3: 13,
+// 	},
+// 	2: {
+// 		1: 21,
+// 		2: 22,
+// 		3: 23,
+// 	},
+// 	3: {
+// 		1: 24,
+// 		2: 25,
+// 		3: 26,
+// 	},
+// }
+// // Найдите сумму элементов этого объекта.
+// let sum = 0;
+
+
+// Object.values(obj).forEach((innerObj) => {
+
+//     sum +=  Object.values(innerObj).reduce((a, b) => a + b, 0)
+// });
+// ;
+
+// console.log(sum);
+
+// Дан текст со словами. Запишите в массив все слова, начинающиеся на букву 'a'.
+// const findA = str=>{
+//     let arr = [];
+//     let newStr = str.split(' ').map(elem=>{
+//         elem.split('');
+//         for (let i = 0; i < elem.length; i++) {
+//             const element = elem[i];
+//             if(element === 'a'){
+//                 arr.push(elem)
+//             }
+
+//         }
+//     })
+//     return arr;
+// }
+// console.log(findA('adsda yyyy iiii oooao '))
+
+// Дан массив с числами. Оставьте в нем только те числа, которые делятся на 5.
+
+// let arr = generateArray(25);
+
+// const arrFive = arr => {
+// let newArr = [];
+// for (let i = 1; i < arr.length; i++) {
+//     const element = arr[i];
+//     console.log(element)
+//     if (element % 5 === 0){
+
+//         newArr.push(element);
+//     }
+
+// }return newArr;
+// }
+// console.log(arrFive(arr))
+
+//Дан массив с числами. Оставьте в нем только те числа, которые содержат цифру ноль.
+// const findZero = arr => {
+//     let newArr = [];
+//     arr.map(elem => {
+//         let newElem = elem.toString().split('');
+//         // console.log(newElem)
+//         for(let i = 0; i < newElem.length; i++) {
+//         const element = newElem[i];
+//         if (element === '0') {
+//             newArr.push(elem);
+//         }
+
+//     }
+// })
+// return newArr;
+// }
+// console.log(findZero(generateArray(30)));
+
+//Дан массив со числами. Проверьте, что в нем есть число, содержащее в себе цифру 3.
+// let number = generateArray(3);
+// let find3 = arr =>{
+//     return arr.find(elem => elem == 3);
+// };
+// console.log(find3(number));
+
+//Дано некоторое число:
+
+// 35142
+// Отсортируйте цифры этого числа. В нашем случае должно получится следующее:
+
+// 12345
+
+// const sortNum = arr => {
+// return +arr.toString().split('').sort((a,b)=>{return a-b}).join('');
+// }
+// console.log(sortNum(35142))
+
+//Напишите программу, которая сформирует следующую строку:
+
+// '-1-2-3-4-5-'
+
+// let stringProg = (n) => {
+//     let newSrt = '-';
+//     for (let i = 1; i < n; i++) {
+        
+//         newSrt+= i+'-';
+        
+//     }
+//     return newSrt;
+// };
+//  console.log(stringProg(6))
+
+// Дан следующий объект:
+
 let obj = {
 	1: {
-		1: 11,
-		2: 12,
-		3: 13,
+		1: {
+			1: 111,
+			2: 112,
+			3: 113,
+		},
+		2: {
+			1: 121,
+			2: 122,
+			3: 123,
+		},
 	},
 	2: {
-		1: 21,
-		2: 22,
-		3: 23,
+		1: {
+			1: 211,
+			2: 212,
+			3: 213,
+		},
+		2: {
+			1: 221,
+			2: 222,
+			3: 223,
+		},
 	},
 	3: {
-		1: 24,
-		2: 25,
-		3: 26,
+		1: {
+			1: 311,
+			2: 312,
+			3: 313,
+		},
+		2: {
+			1: 321,
+			2: 322,
+			3: 323,
+		},
 	},
 }
 // Найдите сумму элементов этого объекта.
-let sum = 0;
-
-
-Object.values(obj).forEach((innerObj) => {
-
-    sum +=  Object.values(innerObj).reduce((a, b) => a + b, 0)
-});
-;
-
-console.log(sum);
+function sumObject(obj) {
+    let sum = 0;
+    for (let key in obj) {
+      if (typeof obj[key] === 'object') {
+        sum += sumObject(obj[key]);
+      } else {
+        sum += obj[key];
+      }
+    }
+    return sum;
+  }
+  
+  console.log(sumObject(obj));
