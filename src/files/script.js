@@ -1,11 +1,11 @@
 
 let generateArray = num => {
-    let arr = [];
-    for (let index = 0; index <= num; index++) {
-        arr.push(index);
+	let arr = [];
+	for (let index = 0; index <= num; index++) {
+		arr.push(index);
 
-    }
-    return arr;
+	}
+	return arr;
 };
 
 
@@ -1415,9 +1415,9 @@ let generateArray = num => {
 // let stringProg = (n) => {
 //     let newSrt = '-';
 //     for (let i = 1; i < n; i++) {
-        
+
 //         newSrt+= i+'-';
-        
+
 //     }
 //     return newSrt;
 // };
@@ -1425,55 +1425,162 @@ let generateArray = num => {
 
 // Дан следующий объект:
 
-let obj = {
-	1: {
-		1: {
-			1: 111,
-			2: 112,
-			3: 113,
-		},
-		2: {
-			1: 121,
-			2: 122,
-			3: 123,
-		},
-	},
-	2: {
-		1: {
-			1: 211,
-			2: 212,
-			3: 213,
-		},
-		2: {
-			1: 221,
-			2: 222,
-			3: 223,
-		},
-	},
-	3: {
-		1: {
-			1: 311,
-			2: 312,
-			3: 313,
-		},
-		2: {
-			1: 321,
-			2: 322,
-			3: 323,
-		},
-	},
-}
-// Найдите сумму элементов этого объекта.
-function sumObject(obj) {
-    let sum = 0;
-    for (let key in obj) {
-      if (typeof obj[key] === 'object') {
-        sum += sumObject(obj[key]);
-      } else {
-        sum += obj[key];
-      }
-    }
-    return sum;
-  }
-  
-  console.log(sumObject(obj));
+// let obj = {
+// 	1: {
+// 		1: {
+// 			1: 111,
+// 			2: 112,
+// 			3: 113,
+// 		},
+// 		2: {
+// 			1: 121,
+// 			2: 122,
+// 			3: 123,
+// 		},
+// 	},
+// 	2: {
+// 		1: {
+// 			1: 211,
+// 			2: 212,
+// 			3: 213,
+// 		},
+// 		2: {
+// 			1: 221,
+// 			2: 222,
+// 			3: 223,
+// 		},
+// 	},
+// 	3: {
+// 		1: {
+// 			1: 311,
+// 			2: 312,
+// 			3: 313,
+// 		},
+// 		2: {
+// 			1: 321,
+// 			2: 322,
+// 			3: 323,
+// 		},
+// 	},
+// }
+// // Найдите сумму элементов этого объекта.
+// function sumObject(obj) {
+//     let sum = 0;
+//     for (let key in obj) {
+//       if (typeof obj[key] === 'object') {
+//         sum += sumObject(obj[key]);
+//       } else {
+//         sum += obj[key];
+//       }
+//     }
+//     return sum;
+//   }
+
+//   console.log(sumObject(obj));
+
+// Дан массив со числами. Удалите из него числа, состоящие более чем из трех цифр.
+// let arrNum = generateArray(150);
+// let arrTwoSumbl = arr => {
+// 	return arr.filter(elem=> elem.toString().length <= 2);
+// };
+// console.log(arrTwoSumbl(arrNum))
+
+// Дано число, например, вот такое:
+
+// let num = 112345;
+// // Проверьте, что все цифры этого числа больше нуля.
+// const newNum = num.toString().split('').find(elem => elem == 0);
+// console.log(newNum)
+// Дан некоторый массив, например, вот такой:
+
+// let arr = [123, 456, 789];
+// // Слейте все элементы этого массива в один массив, разбив их посимвольно:
+
+// // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// const newArr = arr.join('').split('');
+// console.log(newArr)
+
+// Дан следующая структура:
+
+// let data = [
+// 	{
+// 		1: 11,
+// 		2: 12,
+// 		3: 13,
+// 	},
+// 	{
+// 		1: 21,
+// 		2: 22,
+// 		3: 23,
+// 	},
+// 	{
+// 		1: 24,
+// 		2: 25,
+// 		3: 26,
+// 	},
+// ];
+// // Найдите сумму элементов этой структуры.
+
+// const sumObject = arr => {
+// 	let sum = 0;
+// 	arr.map(obj => {
+
+
+// 		sum += Object.values(obj).reduce((a, b) => a + b, 0);
+
+
+// 	}
+// 	)
+// 	return sum;
+// }
+
+// console.log(sumObject(data))
+
+//3.7
+
+//Дана строка со словами. Отсортируйте слова в алфавитном порядке.
+
+// let str = 'bsfsd ctrbx abbx';
+// const AzSort = str =>{
+// 	return str.split(' ').sort().join(' ')
+
+// }
+// console.log(AzSort(str))
+
+// Дано число. Получите массив делителей этого числа.
+
+// const numDivision = num => {
+// 	let arrDiv = [];
+// 	for (let i = 1; i < num; i++) {
+// 		if (num % i === 0){
+// 			arrDiv.push(i);
+// 		}
+		
+// 	}
+// 	console.log(arrDiv)
+// }
+// numDivision(10)
+
+// Даны два числа. Получите массив общих делителей этих чисел.
+
+// const numDivision = (num1,num2) => {
+// 	let arrDiv1 = [];
+// 	let arrDiv2 = [];
+// 	let arrDiv = [];
+	
+// 	for (let i = 1; i < num1; i++) {
+// 		for (let j = 1; j < num2; j++) {
+// 			if (num1 % i === 0 && num2 % j === 0){
+// 				if(i == j){
+// 					arrDiv.push(i)
+// 				}
+// 			}
+			
+// 		}
+		
+		
+// 	}
+	
+// 	console.log(arrDiv)
+// }
+// numDivision(25,20)
