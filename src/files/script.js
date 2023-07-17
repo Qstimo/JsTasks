@@ -1555,7 +1555,7 @@ let generateArray = num => {
 // 		if (num % i === 0){
 // 			arrDiv.push(i);
 // 		}
-		
+
 // 	}
 // 	console.log(arrDiv)
 // }
@@ -1567,7 +1567,7 @@ let generateArray = num => {
 // 	let arrDiv1 = [];
 // 	let arrDiv2 = [];
 // 	let arrDiv = [];
-	
+
 // 	for (let i = 1; i < num1; i++) {
 // 		for (let j = 1; j < num2; j++) {
 // 			if (num1 % i === 0 && num2 % j === 0){
@@ -1575,12 +1575,100 @@ let generateArray = num => {
 // 					arrDiv.push(i)
 // 				}
 // 			}
-			
+
 // 		}
-		
-		
+
+
 // 	}
-	
+
 // 	console.log(arrDiv)
 // }
 // numDivision(25,20)
+
+//Дано число. Проверьте, что у этого числа есть только один делитель, кроме него самого и единицы.
+
+// const numDivision = num => {
+// 	let arrDiv = [];
+// 	for (let i = 1; i < num; i++) {
+// 		if (num % i === 0 && i !== 1 && i !== num) {
+// 			arrDiv.push(i);
+// 		} else {
+// 			if (arrDiv.length > 1) {
+// 				console.log('число делителей больше одного делителя')
+// 				break;
+// 			}
+
+// 		}
+
+// 	}
+// 	console.log(arrDiv)
+// }
+// 	numDivision(4)
+
+//Через запятую написаны числа. Получите максимальное из этих чисел.
+
+// function getMaxOfArray(str) {
+//  	newstr = str.split(',').map(elem=>+elem);
+// 	console.log(newstr);
+// 	return Math.max.apply(null,newstr);
+//   }
+//   console.log(getMaxOfArray('1,2,3,4,5,6,7,8,9,0,22'))
+
+// Дан массив с числами. После каждого однозначного числа вставьте еще такое же.
+
+// let arrNum = [1, 2, 3, 4, 5, 77, 999, 999, 999, 999, 999, 999];
+// const copyElement = arr => {
+// 	let newArr = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         newArr.push(arr[i]);
+//         newArr.push(arr[i]);
+//     }
+//     return newArr;
+// };
+// console.log(copyElement(arrNum));
+// Дана строка. Удалите из нее все гласные буквы.
+
+
+// let str = 'aaabsfsd caatrbx aabbx';
+// let removedVowels = str.replace(/[aeiou]/gi, '');
+// console.log(removedVowels);
+
+// Дана строка. Сделайте заглавной последнюю букву каждого слова в этой строке.
+// let str = 'aaabsfsd caatrbx aabb';
+
+// function capitalizeFirstLetter(str) {
+// 	return str.split(' ').map(elem=>elem = elem.slice(0,elem.length-2) + elem.charAt(elem.length-1).toUpperCase()).join(' ');
+// }
+// console.log(capitalizeFirstLetter(str));
+//Дан следующая структура:
+
+let data = [
+	{
+		1: [1, 2, 3],
+		2: [1, 2, 3],
+		3: [1, 2, 3],
+	},
+	{
+		1: [1, 2, 3],
+		2: [1, 2, 3],
+		3: [1, 2, 3],
+	},
+	{
+		1: [1, 2, 3],
+		2: [1, 2, 3],
+		3: [1, 2, 3],
+	},
+];
+// Найдите сумму элементов этой структуры.
+
+const sumObject = arr => {
+	let sum = 0;
+arr.map(obj => {
+
+Object.values(obj).forEach((innerObj) => {
+
+    sum +=  Object.values(innerObj).reduce((a, b) => a + b, 0)
+})});
+return sum;
+}
+console.log(sumObject(data));
