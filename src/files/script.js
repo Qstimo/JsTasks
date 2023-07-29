@@ -88,7 +88,7 @@ let generateArray = num => {
 
 // const lastSumbol = (str) =>{
 //    let last = str.length -1;
-//    if (str[last] === 'ь'){ 
+//    if (str[last] === 'ь'){
 //     last = str.length -2;
 //    }
 //    alert(str[last]);
@@ -213,7 +213,7 @@ let generateArray = num => {
 //     for (i = str.length  - 1; i >=0; i-- ){
 //         console.log(str[+i])
 //     }
-// } 
+// }
 // enumerationStr('12345')
 
 //Дан массив с числами. Найдите сумму квадратов элементов этого массива.
@@ -373,7 +373,7 @@ let generateArray = num => {
 // for (i = newStr.length  - 1; i >=0; i-- ){
 //     console.log(newStr[i])
 //     }
-// } 
+// }
 
 // numbersCock(123456)
 
@@ -602,7 +602,7 @@ let generateArray = num => {
 //     const num = arr.map((item, i) => {
 
 //         if(+item == Number(item)){
-//             console.log(i); 
+//             console.log(i);
 
 
 //         }
@@ -659,7 +659,7 @@ let generateArray = num => {
 
 
 // function toWeirdCase(s){
-//     var str = s.toLowerCase().split(''); // Переводим строку в нижний регистр, и разбиваем на массив. 
+//     var str = s.toLowerCase().split(''); // Переводим строку в нижний регистр, и разбиваем на массив.
 //     var j = 0;
 //     for(var i = 0; i < str.length; i++){ // проходимся циклом по этим массивам
 //         if(str[i] == ' '){
@@ -779,7 +779,7 @@ let generateArray = num => {
 // let arr = [1, 2, 3, 4, 5, 6];
 // sumOdd(arr);
 
-//функция генерации уникальных чисел в указанном диапозоне 
+//функция генерации уникальных чисел в указанном диапозоне
 
 // function getRandomPositiveInteger (min, max) {
 //     const lower = Math.ceil(Math.min(Math.abs(min), Math.abs(max)));
@@ -886,7 +886,7 @@ let generateArray = num => {
 
 // const formattedStr = arr.join('').replace(/\B(?=(\d{2})+(?!\d))/g, ' ').split(' ');
 
-// console.log(formattedStr); 
+// console.log(formattedStr);
 
 // Дана некоторая строка со словами:
 
@@ -1642,33 +1642,126 @@ let generateArray = num => {
 // console.log(capitalizeFirstLetter(str));
 //Дан следующая структура:
 
-let data = [
-	{
-		1: [1, 2, 3],
-		2: [1, 2, 3],
-		3: [1, 2, 3],
-	},
-	{
-		1: [1, 2, 3],
-		2: [1, 2, 3],
-		3: [1, 2, 3],
-	},
-	{
-		1: [1, 2, 3],
-		2: [1, 2, 3],
-		3: [1, 2, 3],
-	},
-];
-// Найдите сумму элементов этой структуры.
+// let data = [
+// 	{
+// 		1: [1, 2, 3],
+// 		2: [1, 2, 3],
+// 		3: [1, 2, 3],
+// 	},
+// 	{
+// 		1: [1, 2, 3],
+// 		2: [1, 2, 3],
+// 		3: [1, 2, 3],
+// 	},
+// 	{
+// 		1: [1, 2, 3],
+// 		2: [1, 2, 3],
+// 		3: [1, 2, 3],
+// 	},
+// ];
+// // Найдите сумму элементов этой структуры.
 
-const sumObject = arr => {
-	let sum = 0;
-arr.map(obj => {
+// const sumObject = arr => {
+// 	let sum = 0;
+// arr.map(obj => {
 
-Object.values(obj).forEach((innerObj) => {
+// Object.values(obj).forEach((innerObj) => {
 
-    sum +=  Object.values(innerObj).reduce((a, b) => a + b, 0)
-})});
-return sum;
+//     sum +=  Object.values(innerObj).reduce((a, b) => a + b, 0)
+// })});
+// return sum;
+// }
+// console.log(sumObject(data));
+
+//Дан массив со числами. Проверьте, что все числа из этого массива содержат в себе цифру 3.
+
+// const arr = [3, 3, 4, 3, 33, 3, 3, 3, 3, 3,];
+// const arrthue = arr.join("").split("");
+// const arrNew = arrthue.filter(num => num % 3 === 0);
+// if (arrNew.length !== arrthue.length) { console.log('числа не содержат в себе 3'); }
+// else { console.log('числа содержат в себе 3'); }
+// console.log(arrthue);
+
+
+
+// const friiArr = (arr) => {
+// 	const result = arr.map(item => item.toString().includes('3'))
+// 	console.log(result)
+// }
+// friiArr([13, 4, 23, 33])
+
+// Дана строка в формате:
+
+// let str = 'kebab-case';
+// // Преобразуйте ее в формат:
+
+// // 'snake_case'
+
+// function toSnakeCase(str) {
+// 	str = str.split('');
+// 	let newstr = [];
+// 	for (let i = 0; i < str.length; i++) {
+// 		const element = str[i];
+// 		if (element === '-') {
+// 			newstr.push('_');
+// 		} else {
+// 			newstr.push(element);
+// 		}
+// 	}
+// 	return newstr.join('');
+// }
+// console.log(toSnakeCase(str));
+
+
+
+// function toSnakeCase(str) {
+// 	return str.replace(/-/g, '_');
+// }
+
+// console.log(toSnakeCase(str));
+// Дана строка в формате:
+// let str = 'camelCase';
+// // Преобразуйте ее в формат:
+
+// // 'snake_case'
+
+// const snakeCase = (str) => {
+// 	str = str.split('');
+// 	let newstr = [];
+// 	for (let i = 0; i < str.length; i++) {
+// 		const element = str[i];
+// 		if (element === element.toUpperCase()) {
+// 			newstr.push('_' + element.toLowerCase());
+// 		} else {
+// 			newstr.push(element);
+// 		}
+// 	}
+// 	return newstr.join('');
+// }
+// console.log(snakeCase(str));
+
+// Сформируйте с помощью циклов следующий массив:
+
+// [
+// 	[1, 2, 3],
+// 	[1, 2, 3],
+// 	[1, 2, 3],
+// 	[1, 2, 3],
+// 	[1, 2, 3],
+// ]
+
+const arrConstructor = (num) => {
+	let arr = [];
+
+	for (let i = 0; i < num; i++) {
+		let newArr = [];
+		if (i === num) { j = 1; }
+		for (let j = 1; j <= num; j++) {
+
+			newArr.push(j);
+		}
+		arr.push(newArr)
+	}
+	return arr;
 }
-console.log(sumObject(data));
+console.log(arrConstructor(5));
