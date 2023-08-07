@@ -1750,18 +1750,87 @@ let generateArray = num => {
 // 	[1, 2, 3],
 // ]
 
-const arrConstructor = (num) => {
-	let arr = [];
+// const arrConstructor = (num) => {
+// 	let arr = [];
 
-	for (let i = 0; i < num; i++) {
-		let newArr = [];
-		if (i === num) { j = 1; }
-		for (let j = 1; j <= num; j++) {
+// 	for (let i = 0; i < num; i++) {
+// 		let newArr = [];
+// 		if (i === num) { j = 1; }
+// 		for (let j = 1; j <= num; j++) {
 
-			newArr.push(j);
-		}
-		arr.push(newArr)
-	}
-	return arr;
-}
-console.log(arrConstructor(5));
+// 			newArr.push(j);
+// 		}
+// 		arr.push(newArr)
+// 	}
+// 	return arr;
+// }
+// console.log(arrConstructor(5));
+
+// Дана строка. Проверьте, что эта строка состоит только из цифр.
+// let str = '12f445'
+// const numSearch = /^[0-9]+$/.test(str);
+// console.log(numSearch)
+
+// Дана строка. Проверьте, что эта строка состоит только из четных цифр.
+
+// let str = '222 22 22 4'
+// const numSearch = /^-?\d*[02468]$/.test(str);
+// console.log(numSearch)
+
+// Дан массив со числами. Удалите из него числа, имеющие два и более нуля.
+
+// let arr = [400, 25, 35, 45, 55, 65, 75, 85, 980, 32, 200, 5000];
+// const zeroDawn = (arr) => {
+// 	const result = [];
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const num = arr[i].toString().split('');
+// 		let count = 0;
+// 		for (let j = 0; j < num.length; j++) {
+// 			if (+num[j] === 0) {
+// 				count++;
+// 			}
+// 		}
+// 		if (count < 2) {
+
+// 			result.push(num.join(''));
+// 		}
+// 	}
+// 	console.log(result);
+// }
+// zeroDawn(arr);
+
+// Найдите все числа от 1 до 1000, сумма цифр которых равна 13.
+// const one1000 = () => {
+// 	const result = [];
+// 	for (let i = 0; i < 1000; i++) {
+// 		num = i.toString().split('').reduce((a, b) => +a + +b, 0);
+// 		if (num === 13) { result.push(i) }
+// 	}
+// 	console.log(result);
+// }
+// one1000();
+
+// Сформируйте с помощью циклов следующий массив:
+
+// [
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ]
+
+// const arrConstructor = (num) => {
+// 	let arr = [];
+// 	let count = 0;
+
+// 	for (let i = 0; i < num; i++) {
+// 		let newArr = [];
+// 		if (i === num) { j = 1; }
+// 		for (let j = 1; j <= 3; j++) {
+// 			count++;
+// 			newArr.push(count);
+// 		}
+// 		arr.push(newArr)
+// 	}
+// 	return arr;
+// }
+// console.log(arrConstructor(4));
