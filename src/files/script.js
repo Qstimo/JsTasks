@@ -1834,3 +1834,115 @@ let generateArray = num => {
 // 	return arr;
 // }
 // console.log(arrConstructor(4));
+
+
+//Дан массив. Сделайте так, чтобы в нем каждый элемент повторился два раза.
+
+// const arr = [1, 2, 3, 4, 5, 6, 7];
+
+// const newArr = arr.concat(arr).sort();
+// console.log(newArr);
+
+// Дан массив и число. Оставьте в массиве только те числа, которые являются делителями заданного числа.
+
+// const arr = [1, 2, 3, 4, 5, 6, 7];
+// const arrDivision = (arr, num) => {
+// 	return arr.map(elem => {
+// 		if (elem % num === 0) {
+// 			return elem;
+// 		}
+// 	})
+// };
+// console.log(arrDivision(arr, 2));
+
+// // Даны два числа. Получите массив цифр, которые есть и в одном, и во втором числе.
+// const numStr = (n) => {
+// 	return n.toString().split('');
+// }
+
+// const arrConstructor = (n1, n2) => {
+// 	const elem1 = numStr(n1);
+// 	const elem2 = numStr(n2);
+// 	const arrNum = [];
+// 	let count = elem1.length;
+// 	if (elem1.length < elem2.length) {
+// 		count = elem2.length;
+// 	};
+// 	for (let i = 0; i <= count; i++) {
+// 		for (let j = 0; j < elem2.length; j++) {
+// 			if (elem1[i] === elem2[j]) {
+// 				arrNum.push(elem1[i]);
+// 			}
+
+// 		}
+// 	}
+// 	return arrNum;
+
+// }
+// console.log(arrConstructor(34, 345));
+
+// Дано число. Получите массив позицией всех цифр 3 в этом числе, за исключением первой и последней.
+
+// const numArr = num => {
+// 	return num.toString().split('').slice(1, -1).filter(el => el == 3)
+
+// };
+
+// const numArr = num => {
+// 	const arr = [];
+// 	const newNum = num.toString().split('');
+// 	for (let i = 1; i < newNum.length - 1; i++) {
+// 		if (newNum[i] == 3) {
+// 			arr.push(i);
+// 		}
+// 	}
+// 	return arr;
+
+// };
+
+// console.log(numArr(343453335));
+
+// Дан массив со числами. Оставьте в нем числа, состоящие из разных цифр, а остальные удалите.
+
+// const arr = [11, 12, 13, 14, 778, 15, 16, 222, 44, 99];
+
+// const arrFunc = arr => {
+// 	const arrey = [];
+// 	const ar = arr;
+// 	for (let i = 0; i < arr.length; i++) {
+// 		const elemArr = arr[i].toString().split('').sort();
+// 		for (let j = 1; j < elemArr.length; j++) {
+// 			if (elemArr[j - 1] === elemArr[j]) {
+// 				arrey.push(arr[i]);
+// 			}
+// 		}
+// 	}
+// 	return arrey;
+// }
+
+// const arrFunc = arr => {
+// 	return arr.filter(num => {
+// 		const str = num.toString().split('');
+// 		const strSet = new Set(str);
+// 		return str.length === strSet.size;
+// 	})
+// }
+// console.log(arrFunc(arr));
+
+// Дан массив:
+
+// const arr = [
+// 	[1, 2, 3],
+// 	[4, 5, 6],
+// 	[7, 8, 9],
+// ];
+
+// // Слейте элементы этого массива в один одномерный массив:
+
+// // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+// const arrConstructor = arr => {
+// 	return arr.flat();
+// };
+// console.log(arrConstructor(arr));
+
