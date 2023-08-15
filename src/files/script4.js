@@ -104,20 +104,131 @@
 
 // Сделайте функцию, которая будет возвращать сколько дней прошло или осталось до заданной даты в году, в зависимости от того, была уже эта дата или нет.
 
-const dataInfo = datas => {
-    const dataR = new Date(datas);
-    const actualData = new Date();
-    const result = dataR.getDate() - actualData.getDate();
-    if (result) {
-        return `${Math.abs(result)} дней прошло`
-    } else {
-        return `${result} дней осталось`
+// const dataInfo = datas => {
+//     const dataR = new Date(datas);
+//     const actualData = new Date();
+//     const result = dataR.getDate() - actualData.getDate();
+//     if (result) {
+//         return `${Math.abs(result)} дней прошло`
+//     } else {
+//         return `${result} дней осталось`
+//     }
+// }
+// console.log(dataInfo('2021-05-01'))
+
+// const date = '2023-08-01T00:00:00.000Z'
+// let currentDate = Date.parse(new Date());
+// let days = (currentDate - Date.parse(date)) / 86400000;       //86400000 - ms в дне
+// console.log(Math.round(days))
+// console.log(currentDate)
+
+// class Commit {
+//     constructor(text) {
+//         this.text = text;
+//         this.count = 0;
+//     }
+//     countUp() {
+//         this.count += 1;
+//     }
+//     countDawn() {
+//         this.count--;
+//     }
+// }
+
+// const newCommit = new Commit('commit');
+// console.log(newCommit);
+
+// Сделайте функцию, которая параметром будет год и проверять, високосный он или нет.
+
+// function isLeapYear(year) {
+//     if (year % 4 !== 0) {
+//         return false;
+//     } else if (year % 100 !== 0) {
+//         return true;
+//     } else if (year % 400 !== 0) {
+//         return false;
+//     } else {
+//         return true;
+//     }
+// }
+// console.log(isLeapYear(2000))
+// // Сделайте функцию, которая вернет массив всех високосных годов за предыдущие сто лет.
+// const arrYear = () => {
+//     const arr = [];
+//     for (let i = 1923; i < 2024; i++) {
+//         if (isLeapYear(i)) { arr.push(i); }
+
+//     }
+//     return arr;
+// }
+// console.log(arrYear());
+
+// let now = new Date(); // получаем текущий момент
+// let date = new Date(now.getFullYear(), 11, 31); // получаем нашу дату
+// console.log(date)
+// console.log(date.getDay());
+
+// Сделайте функцию, которая будет возвращать сколько дней осталось до конца текущего месяца.
+
+// const daysOfMonth = () => {
+//     const newDate = new Date();
+// }
+
+
+// const dataInfo = () => {
+//     const actualData = new Date();
+//     const dataR = new Date(actualData.getFullYear(), date.getMonth() + 1, 0);
+//     const result = dataR.getDate() - actualData.getDate();
+
+//     if (result < 0) {
+//         return `${Math.abs(result)} дней прошло`
+//     } else {
+//         return `${result} дней осталось`
+//     }
+// }
+
+
+// console.log(dataInfo())
+
+//Сделайте функцию, которая вернет предыдущий, текущий и следующий дни недели словом в виде следующего объекта:
+
+// {
+// 	next: 'пн',
+// 	curr: 'вс',
+// 	prev: 'сб',
+// }
+const arrDay = ['вс', 'пн', 'вт', 'ср', 'чт', 'пн', 'сб',]
+
+class NextDay {
+    constructor(date) {
+        this.next = arrDay[date + 1];
+        this.curr = arrDay[date];
+        this.prev = arrDay[date - 1];
     }
 }
-console.log(dataInfo('2021-05-01'))
+const dataInfo = () => {
+    const actualData = new Date();
+    const date = actualData.getDay();
 
-const date = '2023-08-01T00:00:00.000Z'
-let currentDate = Date.parse(new Date());
-let days = (currentDate - Date.parse(date)) / 86400000;       //86400000 - ms в дне
-console.log(Math.round(days))
-console.log(currentDate)
+    return new NextDay(date)
+
+
+}
+console.log(dataInfo())
+
+
+
+
+
+// class Commit {
+//     constructor(text) {
+//         this.text = text;
+//         this.count = 0;
+//     }
+//     countUp() {
+//         this.count += 1;
+//     }
+//     countDawn() {
+//         this.count--;
+//     }
+// }
